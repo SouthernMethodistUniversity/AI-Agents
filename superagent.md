@@ -21,18 +21,23 @@ color: accent # UI color tag; purely visual, safe to change to a hex or another 
 
 prompt: "{file:./prompts/super-agent.md}" # Optional external prompt file; remove this line if you keep all prompt text in the Markdown body.
 
-tools: # Legacy compatibility section; still supported, but permissions are the modern standard.
-  write: true # Allow creating new files; turn off for planning-only or review-only agents.
-  edit: true # Allow modifying existing files; turn off for read-only analysis agents.
-  patch: true # Allow applying patches; turn off if you want edits only through normal file operations.
-  bash: true # Allow shell commands; turn off for safer or more locked-down agents.
-  webfetch: true # Allow fetching web content; turn off for offline-only or privacy-sensitive work.
-  read: true # Allow reading files; usually leave on unless you are doing something very unusual.
-  grep: true # Allow content search; useful for codebase discovery and investigation.
-  glob: true # Allow pattern-based file matching; useful for finding files by name/path shape.
-  ls: true # Allow directory listing; almost always useful.
-  skill: true # Allow the native skill tool; turn off if you do not want reusable skills loaded.
-  mymcp_*: true # Example wildcard for MCP/custom tools; replace with real names or remove if unused.
+# NOTE: `tools` is deprecated, but still supported.
+# By default, `tools` are enabled, and `permissions` decide whether actions are allowed, denied, or require approval.
+
+# tools: # Legacy compatibility section; still supported, but permissions are the modern standard.
+  # write: true # Allow creating new files; turn off for planning-only or review-only agents.
+  # edit: true # Allow modifying existing files; turn off for read-only analysis agents.
+  # patch: true # Allow applying patches; turn off if you want edits only through normal file operations.
+  # bash: true # Allow shell commands; turn off for safer or more locked-down agents.
+  # webfetch: true # Allow fetching web content; turn off for offline-only or privacy-sensitive work.
+  # read: true # Allow reading files; usually leave on unless you are doing something very unusual.
+  # grep: true # Allow content search; useful for codebase discovery and investigation.
+  # glob: true # Allow pattern-based file matching; useful for finding files by name/path shape.
+  # ls: true # Allow directory listing; almost always useful.
+  # skill: true # Allow the native skill tool; turn off if you do not want reusable skills loaded.
+  # mymcp_*: true # Example wildcard for MCP/custom tools; replace with real names or remove if unused.
+
+#End deprecated `tools` section
 
 permission: # Modern control surface; this is what OpenCode now prefers over legacy tool booleans.
   edit: allow # Allow file edits without approval; change to ask for guardrails, deny for read-only.
