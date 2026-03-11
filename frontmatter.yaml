@@ -1,0 +1,42 @@
+---
+description: "required string"
+mode: primary | subagent | all
+hidden: true | false
+model: provider/model-id
+temperature: 0.0
+top_p: 1.0
+steps: 10
+disable: true | false
+prompt: "{file:./relative/path/to/prompt.txt}"
+color: "#ff6b6b" | primary | secondary | accent | success | warning | error | info
+
+tools:
+  write: true | false
+  edit: true | false
+  bash: true | false
+  webfetch: true | false
+  read: true | false
+  grep: true | false
+  glob: true | false
+  ls: true | false
+  some_mcp_*: true | false
+
+permission:
+  edit: allow | ask | deny
+  webfetch: allow | ask | deny
+
+  bash:
+    "*": allow | ask | deny
+    "git *": allow | ask | deny
+    "git diff": allow | ask | deny
+    "git status *": allow | ask | deny
+
+  task:
+    "*": allow | ask | deny
+    "review-*": allow | ask | deny
+    "docs-*": allow | ask | deny
+
+# provider-specific passthrough keys
+reasoningEffort: high
+textVerbosity: low
+---
