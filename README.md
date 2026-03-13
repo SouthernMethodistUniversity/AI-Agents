@@ -1,2 +1,2 @@
-# GitHub-Copilot-CLI-Agents
-A collection of GitHub Copilot CLI Agents
+# SMU AI Agents
+A collection of Academic Agents
